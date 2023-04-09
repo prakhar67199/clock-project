@@ -1,0 +1,98 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: beige;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #212121;
+}
+
+.container
+{
+    position: relative;
+}
+.clock
+{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0px 0px  30px rgba(0, 0, 0, 0.9);
+    /* below method is used to center the clock center dot */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* position the clock number */
+.clock span
+{
+    position: absolute;
+    /* line number 39,40 put all number into circuler form */
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+/* below code is used to design perfect position for clock numbers  */
+.clock span b
+{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+/* below code is used to design clock center dot */
+.clock::before
+{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;  
+    border-radius: 50%;
+    background-color: aliceblue; 
+    /* below property is used to  place dot pointer above over clock hands */
+    z-index: 100;
+}
+/* below code is used to show all hand towords 12 */
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+/* below code is used to design clock hands */
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: var(--w);
+    height: var(--h);
+    border-radius: 8px;
+}
+.clock-name-desc
+{
+    height: 35px;
+    width: 50px;
+    position: relative;
+    position: absolute;
+    top: 70%;
+    left: 45%;
+}
+.clock-desc 
+{
+    position: absolute;
+    left: 12%;
+    text-transform: capitalize;
+}
+.clock-name
+{
+    text-transform: capitalize; 
+}

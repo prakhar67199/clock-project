@@ -1,4 +1,6 @@
-// hour hand logic
+
+//  <------------------------------------clock logic------------------------------->
+//  hour hand logic
 // 12 hour = 360deg
 //  1 hour = 360/12 => 30deg
 //  h hour = (30h + m/2) deg
